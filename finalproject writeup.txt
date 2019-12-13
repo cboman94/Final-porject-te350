@@ -1,0 +1,45 @@
+**Please Return SD card**
+
+This Build is sutable for any Raspberry Pi 3, or later models. 
+Unfortunatly, I don't have access to my SD card, so I can't provide the name of every file. However, they are 
+all contained on the pi/home folder of the SD card. 
+
+Recipe.
+-Setup and update Raspberry Pi 4.
+-Create an Amazon Developer account.
+-Go to Alexa Voice Service and input the details of your prototype.
+-Download the AVS credentials it provides you to your Pi/Home folder.  
+
+Recipe of code Needed for Raspberry Pi with Alexa.
+(This will download additional files to the Pi/Home area of the SD.)
+1st. 
+"sudo apt-get upgrade"
+2nd. 
+"wget https://raw.githubusercontent.com/alexa/avs-device-sdk/master/tools/Install/setup.sh \
+wget https://raw.githubusercontent.com/alexa/avs-device-sdk/master/tools/Install/genConfig.sh \
+wget https://raw.githubusercontent.com/alexa/avs-device-sdk/master/tools/Install/pi.sh"
+3rd.
+"cd /home/pi/
+sudo bash setup.sh config.json [-s 1234]"
+4th.
+"cd /home/pi/
+sudo bash startsample.sh"
+5th
+talk with Alexa
+
+Notes
+-When I started this project I thought it was going to be quite a stretch for me. However, due to excelent 
+online instructions from Amazon themselves, it was surprisingly straightforward. The majority of the problems I
+encountered were easily solved by deleting files that downloaded incorrectly, and reloading them. I did run into one 
+problem that was harder to correct. It stemed from the fact that the program is designed to recieve audio input
+from a usb microphone, which I didn't have. however, I did have access to a 3.5mm headset that includes a microphone, 
+so I spent 2 hours on the forums investigating how to reprogram my Alexa raspberry pi to look for input from the 3.5mm 
+jack. unfortunatly, because the code makes reference to the usb microphone in multiple places, scattered throughout the
+entire code, this was an unrealistic goal. After purchasing a usb microphone the code functioned perfectly, and I was able
+use Alexa voice service simple questions. As an extension of this project, I would plan to have students integrate bluetooth
+finctionality so they can play music through youtube or spotify to bluetooth speakers. This is fairly easy using 
+the suite of guides on the amazon developer app. Alternatly, students could program any number of functions to their Pi.
+
+Works Cited 
+Les Us, Et Coutumes De La Mer, Divisees En Trois Parties, Etc.
+US-Estienne CLEIRAC - https://developer.amazon.com/en-US/docs/alexa/alexa-voice-service/set-up-raspberry-pi.html
